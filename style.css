@@ -1,0 +1,118 @@
+body {
+  font-family: 'Port Lligat Sans', sans-serif;
+  -webkit-app-region: drag;
+  background-color: #e6d9f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  -webkit-app-region: no-drag;
+  background-color: #fff8ff;
+  padding: 20px 25px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 350px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0;
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+}
+
+li span {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+li.completed span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+li.completed span::after {
+  transform: scaleX(1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-task {
+  display: flex;
+  align-items: center;
+  background-color: #e3d4fa;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.add-task span {
+  margin-right: 10px;
+}
+
+.add-task input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+  -webkit-app-region: no-drag;
+}
+
+.delete-btn:hover {
+  color: red;
+}
